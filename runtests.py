@@ -33,9 +33,7 @@ def run_tests(*test_args):
     runner = get_runner(settings)
     test_runner = runner()
 
-    failures = test_runner.run_tests(test_args)
-
-    if failures:
+    if failures := test_runner.run_tests(test_args):
         sys.exit(bool(failures))
 
 
